@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Current() {
   const [center, setCenter] = useState("");
   const [dusty, setDusty] = useState();
+  const [address, setAddress] = useState("");
 
   const kakao_key = process.env.REACT_APP_KAKAO_KEY;
 
@@ -13,6 +14,17 @@ export default function Current() {
 
   const TestApiCall = async () => {
     try {
+      const response4 = await axios.get(
+        `https://dapi.kakao.com/v2/local/geo/coord2address.json?input_coord=WGS84&y=${location.coordinates.lat}&x=${location.coordinates.lng}`,
+        {
+          headers: {
+            Authorization: "KakaoAK " + kakao_key,
+          },
+        }
+      );
+      const addr = response4.data.documents[0].road_address;
+      setAddress(addr);
+
       const response = await axios.get(
         `https://dapi.kakao.com/v2/local/geo/transcoord.json?x=${location.coordinates.lng}&y=${location.coordinates.lat}&input_coord=WGS84&output_coord=TM`,
         {
@@ -47,7 +59,7 @@ export default function Current() {
   TestApiCall();
   return (
     <div>
-      측정소: {center} 농도: {dusty}
+      측정소: {center} 농도: {dusty} 현재위치: {address.region_2depth_name}
     </div>
   );
 }
