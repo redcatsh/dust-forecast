@@ -35,12 +35,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/user-event", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:13.5.0"],\
             ["@theme-toggles/react", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:4.1.0"],\
             ["axios", "npm:1.4.0"],\
+            ["dotenv", "npm:16.0.3"],\
             ["eslint-config-react-app", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:18.2.0"],\
             ["react-icons", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:4.8.0"],\
             ["react-router-dom", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:6.11.2"],\
             ["react-scripts", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:5.0.1"],\
+            ["react-uuid", "npm:2.0.0"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["web-vitals", "npm:2.1.4"],\
             ["yarn-audit-fix", "npm:9.3.10"]\
@@ -8006,6 +8008,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:10.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:16.0.3", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.3"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["dotenv-expand", [\
@@ -15283,6 +15292,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-uuid", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/react-uuid-npm-2.0.0-110e96194a-edfdd86ce5.zip/node_modules/react-uuid/",\
+          "packageDependencies": [\
+            ["react-uuid", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["read-cache", [\
         ["npm:1.0.0", {\
           "packageLocation": "./.yarn/cache/read-cache-npm-1.0.0-00fa89ed05-cffc728b9e.zip/node_modules/read-cache/",\
@@ -16108,12 +16126,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/user-event", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:13.5.0"],\
             ["@theme-toggles/react", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:4.1.0"],\
             ["axios", "npm:1.4.0"],\
+            ["dotenv", "npm:16.0.3"],\
             ["eslint-config-react-app", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:7.0.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:18.2.0"],\
             ["react-icons", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:4.8.0"],\
             ["react-router-dom", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:6.11.2"],\
             ["react-scripts", "virtual:ebbf9c737c37c8f2ce8866befa502924c163ead59bcf947f944f10b0db7b91c05fa0b1cdb6aa28069ae34bec81ceb6eacf96d148f91111aa222977b63a99a622#npm:5.0.1"],\
+            ["react-uuid", "npm:2.0.0"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["web-vitals", "npm:2.1.4"],\
             ["yarn-audit-fix", "npm:9.3.10"]\

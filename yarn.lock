@@ -5490,6 +5490,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "duplexer@npm:^0.1.2":
   version: 0.1.2
   resolution: "duplexer@npm:0.1.2"
@@ -11081,6 +11088,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-uuid@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-uuid@npm:2.0.0"
+  checksum: edfdd86ce5cd19da9740fae1147ed106e3090f4d9c59b4e3f0001c2dc605f63dc89e225adc5623929a8775363ab355da32adda92dd70a3bb514fff911b93da73
+  languageName: node
+  linkType: hard
+
 "react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -11845,12 +11859,14 @@ __metadata:
     "@testing-library/user-event": ^13.2.1
     "@theme-toggles/react": ^4.1.0
     axios: ^1.4.0
+    dotenv: ^16.0.3
     eslint-config-react-app: ^7.0.1
     react: ^18.2.0
     react-dom: ^18.2.0
     react-icons: ^4.8.0
     react-router-dom: ^6.11.1
     react-scripts: 5.0.1
+    react-uuid: ^2.0.0
     tailwindcss: ^3.3.2
     web-vitals: ^2.1.0
     yarn-audit-fix: ^9.3.10
