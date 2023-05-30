@@ -1,15 +1,9 @@
 import axios from "axios";
 import useGeolocation from "../hooks/useGeolocation";
 import { useEffect, useState } from "react";
-// import { Doughnut } from "react-chartjs-2";
-// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "../styles/current.css";
-// import { Chart } from "../components/chart";
-import { Chart } from "../components/Piechart";
 import { PieChart } from "react-minimal-pie-chart";
 export default function Current() {
-  // ChartJS.register(ArcElement, Tooltip, Legend);
-
   const [center, setCenter] = useState("");
   const [dusty, setDusty] = useState();
   const [address, setAddress] = useState("");

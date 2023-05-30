@@ -226,6 +226,13 @@ input {
   outline: none;
 }
 
+div#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 html {
   /* background: url(../public/good3.jpg) no-repeat bottom;
   background-size: cover; */
