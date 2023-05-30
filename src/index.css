@@ -223,8 +223,11 @@ input {
 }
 
 html {
-  background: url(../public/good3.jpg) no-repeat bottom;
   background-size: cover;
+}
+
+html.soso {
+  background: url(../public/good3.jpg) no-repeat bottom;
 }
 
 html.soso {
