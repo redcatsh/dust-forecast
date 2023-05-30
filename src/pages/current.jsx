@@ -1,18 +1,19 @@
 import axios from "axios";
 import useGeolocation from "../hooks/useGeolocation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Current() {
   const [center, setCenter] = useState("");
   const [dusty, setDusty] = useState();
   const [address, setAddress] = useState("");
+  const [grade, setGrade] = useState("");
+  const [gradeLan, setGradeLan] = useState("");
 
   const kakao_key = process.env.REACT_APP_KAKAO_KEY;
 
   const location = useGeolocation();
-  // async/await 를 활용하는 수정된 방식
 
-  const TestApiCall = async () => {
+  const ApiCall = async () => {
     try {
       const response4 = await axios.get(
         `https://dapi.kakao.com/v2/local/geo/coord2address.json?input_coord=WGS84&y=${location.coordinates.lat}&x=${location.coordinates.lng}`,
@@ -22,7 +23,7 @@ export default function Current() {
           },
         }
       );
-      const addr = response4.data.documents[0].road_address;
+      const addr = response4.data.documents[0].address.region_2depth_name;
       setAddress(addr);
 
       const response = await axios.get(
@@ -43,23 +44,45 @@ export default function Current() {
         }`
       );
       const station = response2.data.response.body.items[0].stationName;
-      console.log(station);
       setCenter(station);
 
       const response3 = await axios.get(
         `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?dataTerm=month&pageNo=1&numOfRows=100&returnType=json&stationName=${station}&serviceKey=${process.env.REACT_APP_DUST_KEY}`
       );
       const dust = response3.data.response.body.items[0].pm10Value;
-      console.log(dust);
+      const grade = response3.data.response.body.items[0].pm10Grade;
       setDusty(dust);
+      setGrade(grade);
     } catch (err) {
       console.log("Error >>", err);
     }
   };
-  TestApiCall();
+  // ApiCall();
+
+  useEffect(() => {
+    ApiCall();
+  }, [location]);
+
+  useEffect(() => {
+    if (grade === "1") {
+      setGradeLan("좋음");
+    } else if (grade === "2") {
+      setGradeLan("보통");
+    } else if (grade === "3") {
+      setGradeLan("나쁨");
+    } else if (grade === "4") {
+      setGradeLan("매우나쁨");
+    } else {
+      setGradeLan("-");
+    }
+  }, [grade]);
   return (
     <div>
-      측정소: {center} 농도: {dusty} 현재위치: {address.region_2depth_name}
+      현재위치: {address}
+      <br />
+      농도: {dusty}
+      <br />
+      등급: {gradeLan}
     </div>
   );
 }
