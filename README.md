@@ -1,7 +1,15 @@
 # React로 만든 실시간 위치기반 대기 정보 알림 앱
 현재 위치를 기반으로 미세먼지 농도 등 대기 농도와 등급을 나타내주는 앱 서비스입니다. 
 
-에어코리아 오픈 API와 Kakao 오픈 API를 활용하여 작업하였습니다.
+### 사용 API와 라이브러리
+- 에어코리아 오픈 API
+- Kakao 오픈 API
+- react-minimal-pie-chart
+
+### Stack
+- React
+- JavaScript
+- TailwindCSS
 
 ## 서비스 화면
 ### PC
