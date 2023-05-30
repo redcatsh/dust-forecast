@@ -100,15 +100,19 @@ export default function Current() {
 
   useEffect(() => {
     if (grade === "1") {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add("good");
       setGradeLan("좋음");
     } else if (grade === "2") {
+      document.documentElement.classList.add("soso");
       setGradeLan("보통");
     } else if (grade === "3") {
+      document.documentElement.classList.add("soso");
       setGradeLan("나쁨");
     } else if (grade === "4") {
+      document.documentElement.classList.add("bad");
       setGradeLan("매우나쁨");
     } else {
+      document.documentElement.classList.add("good");
       setGradeLan("-");
     }
   }, [grade]);

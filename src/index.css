@@ -184,6 +184,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100vh;
+  width: 100%;
 }
 ol,
 ul {
@@ -221,10 +223,18 @@ input {
 }
 
 html {
-  background-color: var(--color-bg);
+  background: url(../public/good3.jpg) no-repeat bottom;
+  background-size: cover;
 }
-.container {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 2.5rem 2.5rem 2.5rem;
+
+html.soso {
+  background: url(../public/soso.jpg) no-repeat center;
+}
+
+html.bad {
+  background: url(../public/bad.jpg) no-repeat center;
+}
+
+html.verybad {
+  background: url(../public/verybad.jpg) no-repeat center;
 }
