@@ -233,28 +233,19 @@ div#root {
   height: 100vh;
 }
 
-html {
-  /* background: url(../public/good3.jpg) no-repeat bottom;
-  background-size: cover; */
-}
-
 html.good {
-  /* background: url(../public/good3.jpg) no-repeat bottom; */
   background: linear-gradient(150deg, #6ad6e8, #1968ca);
 }
 
 html.soso {
-  /* background: url(../public/verybad.jpg) no-repeat center; */
   background: linear-gradient(150deg, #26cda1, #045f80);
   animation: gradient-animation 6s ease infinite;
 }
 
 html.bad {
-  background: url(../public/bad.jpg) no-repeat center;
   background: linear-gradient(150deg, #e8af6a, #823310);
 }
 
 html.verybad {
-  /* background: url(../public/verybad.jpg) no-repeat center; */
   background: linear-gradient(150deg, #ed6262, #580331);
 }
