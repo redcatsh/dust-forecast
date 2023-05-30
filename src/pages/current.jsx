@@ -371,7 +371,7 @@ export default function Current() {
   return (
     <>
       <div className="vid">
-        <video autoPlay="autoplay" muted="muted" loop>
+        <video autoPlay loop muted playsInline>
           <source src="./dust.mp4" type="video/mp4" />
         </video>
       </div>
