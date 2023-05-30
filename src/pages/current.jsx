@@ -1,10 +1,10 @@
 import axios from "axios";
 import useGeolocation from "../hooks/useGeolocation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "../styles/current.css";
 import { PieChart } from "react-minimal-pie-chart";
 export default function Current() {
-  const [center, setCenter] = useState("");
+  const [, setCenter] = useState("");
   const [dusty, setDusty] = useState();
   const [address, setAddress] = useState("");
   const [grade, setGrade] = useState("");
@@ -34,7 +34,7 @@ export default function Current() {
 
   const location = useGeolocation();
 
-  const ApiCall = async () => {
+  const ApiCall = useCallback(async () => {
     try {
       const response4 = await axios.get(
         `https://dapi.kakao.com/v2/local/geo/coord2address.json?input_coord=WGS84&y=${location.coordinates.lat}&x=${location.coordinates.lng}`,
@@ -67,7 +67,6 @@ export default function Current() {
       );
       const station = response2.data.response.body.items[0].stationName;
       setCenter(station);
-
       const response3 = await axios.get(
         `https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?dataTerm=month&pageNo=1&numOfRows=100&returnType=json&stationName=${station}&serviceKey=${process.env.REACT_APP_DUST_KEY}`
       );
@@ -98,11 +97,11 @@ export default function Current() {
     } catch (err) {
       console.log("Error >>", err);
     }
-  };
+  }, [location, kakao_key]);
 
   useEffect(() => {
     ApiCall();
-  }, [location]);
+  }, [ApiCall]);
 
   useEffect(() => {
     if (grade === "1") {
@@ -179,6 +178,7 @@ export default function Current() {
       setSoGradeCol("#398fff");
     }
   }, [soGrade]);
+
   useEffect(() => {
     if (noGrade === "1") {
       setNoGradeLan("좋음");
@@ -196,6 +196,7 @@ export default function Current() {
       setNoGradeLan("-");
       setNoGradeCol("#398fff");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [noGrade]);
 
   useEffect(() => {
@@ -215,6 +216,7 @@ export default function Current() {
       setKhaiGradeLan("-");
       setKhaiGradeCol("#398fff");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [khaiGrade]);
 
   const OzChart = () => {
