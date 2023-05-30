@@ -38,7 +38,7 @@ export default function Current() {
           },
         }
       );
-      const addr = response4.data.documents[0].address.region_2depth_name;
+      const addr = response4.data.documents[0].address.region_2depth_name; // 원래는 road_address.region_2depth_name인데 왜 오류나지..?
       setAddress(addr);
 
       const response = await axios.get(
@@ -100,6 +100,7 @@ export default function Current() {
 
   useEffect(() => {
     if (grade === "1") {
+      document.documentElement.classList.add("dark");
       setGradeLan("좋음");
     } else if (grade === "2") {
       setGradeLan("보통");
