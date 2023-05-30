@@ -8,3 +8,65 @@ video {
   object-fit: cover;
   filter: opacity(0.08);
 }
+
+.value {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-weight: 300;
+  font-family: "Poppins";
+}
+
+/* .value.good {
+  color: #398fff;
+}
+
+.value.soso {
+  color: #26cda1;
+}
+
+.value.bad {
+  color: #e8af6a;
+}
+
+.value.verybad {
+  color: #ed6262;
+} */
+
+.grade {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.kind {
+  font-size: 15px;
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .value {
+    top: 38%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  body {
+    padding: 16px;
+  }
+  .value {
+    top: 36%;
+    font-size: 14px;
+  }
+
+  .grade {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .kind {
+    font-size: 13px;
+  }
+
+  svg {
+    width: 70% !important;
+    height: 70% !important;
+  }
+}

@@ -118,10 +118,10 @@ export default function Current() {
       document.documentElement.classList.add("soso");
       setGradeLan("보통");
     } else if (grade === "3") {
-      document.documentElement.classList.add("soso");
+      document.documentElement.classList.add("bad");
       setGradeLan("나쁨");
     } else if (grade === "4") {
-      document.documentElement.classList.add("bad");
+      document.documentElement.classList.add("verybad");
       setGradeLan("매우나쁨");
     } else {
       document.documentElement.classList.add("good");
@@ -132,7 +132,7 @@ export default function Current() {
   useEffect(() => {
     if (ozGrade === "1") {
       setOzGradeLan("좋음");
-      setOzGradeCol("#6ad6e8");
+      setOzGradeCol("#398fff");
     } else if (ozGrade === "2") {
       setOzGradeLan("보통");
       setOzGradeCol("#26cda1");
@@ -144,14 +144,14 @@ export default function Current() {
       setOzGradeCol("#ed6262");
     } else {
       setOzGradeLan("-");
-      setOzGradeCol("#6ad6e8");
+      setOzGradeCol("#398fff");
     }
   }, [ozGrade]);
 
   useEffect(() => {
     if (coGrade === "1") {
       setCoGradeLan("좋음");
-      setCoGradeCol("#6ad6e8");
+      setCoGradeCol("#398fff");
     } else if (coGrade === "2") {
       setCoGradeLan("보통");
       setCoGradeCol("#26cda1");
@@ -163,14 +163,14 @@ export default function Current() {
       setCoGradeCol("#ed6262");
     } else {
       setCoGradeLan("-");
-      setCoGradeCol("#6ad6e8");
+      setCoGradeCol("#398fff");
     }
   }, [coGrade]);
 
   useEffect(() => {
     if (soGrade === "1") {
       setSoGradeLan("좋음");
-      setSoGradeCol("#6ad6e8");
+      setSoGradeCol("#398fff");
     } else if (soGrade === "2") {
       setSoGradeLan("보통");
       setSoGradeCol("#26cda1");
@@ -182,13 +182,13 @@ export default function Current() {
       setSoGradeCol("#ed6262");
     } else {
       setSoGradeLan("-");
-      setSoGradeCol("#6ad6e8");
+      setSoGradeCol("#398fff");
     }
   }, [soGrade]);
   useEffect(() => {
     if (noGrade === "1") {
       setNoGradeLan("좋음");
-      setNoGradeCol("#6ad6e8");
+      setNoGradeCol("#398fff");
     } else if (noGrade === "2") {
       setNoGradeLan("보통");
       setNoGradeCol("#26cda1");
@@ -200,14 +200,14 @@ export default function Current() {
       setNoGradeCol("#ed6262");
     } else {
       setNoGradeLan("-");
-      setNoGradeCol("#6ad6e8");
+      setNoGradeCol("#398fff");
     }
   }, [noGrade]);
 
   useEffect(() => {
     if (khaiGrade === "1") {
       setKhaiGradeLan("좋음");
-      setKhaiGradeCol("#6ad6e8");
+      setKhaiGradeCol("#398fff");
     } else if (khaiGrade === "2") {
       setKhaiGradeLan("보통");
       setKhaiGradeCol("#26cda1");
@@ -219,32 +219,153 @@ export default function Current() {
       setKhaiGradeCol("#ed6262");
     } else {
       setKhaiGradeLan("-");
-      setKhaiGradeCol("#6ad6e8");
+      setKhaiGradeCol("#398fff");
     }
   }, [khaiGrade]);
 
-  const Chart = () => {
+  const OzChart = () => {
+    return (
+      <PieChart
+        data={[
+          {
+            value: oz * 1000,
+            color: ozGradeCol,
+            name: "name1",
+          },
+        ]}
+        style={{ width: "73%", height: "73%", display: "inline-block" }}
+        reveal={Number(oz * 1000)} // 퍼센트치수
+        lineWidth={18} // 도넛 두께
+        background="#f2f2f2"
+        lengthAngle={360}
+        totalValue={40}
+        startAngle={270}
+        rounded
+        animate
+        // label={({ dataEntry }) => dataEntry.value}
+        labelStyle={{
+          fontSize: "26px",
+          fontWeight: "600",
+          fill: ozGradeCol,
+        }}
+        labelPosition={0}
+      />
+    );
+  };
+
+  const CoChart = () => {
+    return (
+      <PieChart
+        data={[
+          {
+            value: co * 100,
+            color: coGradeCol,
+            name: "name2",
+          },
+        ]}
+        style={{ width: "73%", height: "73%", display: "inline-block" }}
+        reveal={Number(co * 100)} // 퍼센트치수
+        lineWidth={18} // 도넛 두께
+        background="#f2f2f2"
+        lengthAngle={360}
+        totalValue={130}
+        startAngle={270}
+        rounded
+        animate
+        // label={({ dataEntry }) => dataEntry.value}
+        labelStyle={{
+          fontSize: "26px",
+          fontWeight: "600",
+          fill: coGradeCol,
+        }}
+        labelPosition={0}
+      />
+    );
+  };
+
+  const SoChart = () => {
+    return (
+      <PieChart
+        data={[
+          {
+            value: so * 10000,
+            color: soGradeCol,
+            name: "name3",
+          },
+        ]}
+        style={{ width: "73%", height: "73%", display: "inline-block" }}
+        reveal={Number(so * 10000)} // 퍼센트치수
+        lineWidth={18} // 도넛 두께
+        background="#f2f2f2"
+        lengthAngle={360}
+        totalValue={130}
+        startAngle={270}
+        rounded
+        animate
+        // label={({ dataEntry }) => dataEntry.value}
+        labelStyle={{
+          fontSize: "26px",
+          fontWeight: "600",
+          fill: soGradeCol,
+        }}
+        labelPosition={0}
+      />
+    );
+  };
+
+  const NoChart = () => {
+    return (
+      <PieChart
+        data={[
+          {
+            value: no * 1000,
+            color: noGradeCol,
+            name: "name4",
+          },
+        ]}
+        style={{ width: "73%", height: "73%", display: "inline-block" }}
+        reveal={Number(no) * 1000} // 퍼센트치수
+        lineWidth={18} // 도넛 두께
+        background="#f2f2f2"
+        lengthAngle={360}
+        totalValue={5}
+        startAngle={270}
+        rounded
+        animate
+        // label={({ dataEntry }) => dataEntry.value}
+        labelStyle={{
+          fontSize: "26px",
+          fontWeight: "600",
+          fill: noGradeCol,
+        }}
+        labelPosition={0}
+      />
+    );
+  };
+
+  const KhaiChart = () => {
     return (
       <PieChart
         data={[
           {
             value: khai,
             color: khaiGradeCol,
-            name: "name1",
+            name: "name5",
           },
         ]}
         style={{ width: "73%", height: "73%", display: "inline-block" }}
         reveal={Number(khai)} // 퍼센트치수
         lineWidth={18} // 도넛 두께
-        background="#f3f3f3"
+        background="#f2f2f2"
         lengthAngle={360}
         totalValue={100}
         startAngle={270}
         rounded
         animate
-        label={({ dataEntry }) => dataEntry.value + "%"}
+        // label={({ dataEntry }) => dataEntry.value}
         labelStyle={{
           fontSize: "26px",
+          fontWeight: "600",
           fill: khaiGradeCol,
         }}
         labelPosition={0}
@@ -258,7 +379,7 @@ export default function Current() {
           <source src="./dust.mp4" type="video/mp4" />
         </video>
       </div>
-      <div className="text-slate-200 gradient relative z-10">
+      <div className="text-slate-100 gradient relative z-10">
         <div className="flex flex-col items-center text-center p-5 rounded-xl">
           <h3 className="text-xl mb-4">{address}</h3>
           <div>
@@ -266,36 +387,52 @@ export default function Current() {
             <p className="text-3xl font-semibold">{gradeLan}</p>
           </div>
         </div>
-        <div className="flex items-center justify-between text-center mt-5 p-5 rounded-xl bg-[#ffffff15]">
-          <div>
-            <Chart />
-            <p>{oz}</p>
-            <p>{ozGradeLan}</p>
-            <p>오존</p>
+        <div className="flex items-center justify-between text-center mt-5 rounded-xl ">
+          <div className="relative">
+            <OzChart />
+            <p
+              className="value"
+              // className={
+              //   "value" +
+              //   (ozGradeLan === "좋음"
+              //     ? " good"
+              //     : ozGradeLan === "보통"
+              //     ? " soso"
+              //     : ozGradeLan === "나쁨"
+              //     ? " bad"
+              //     : ozGradeLan === "매우나쁨"
+              //     ? " verybad"
+              //     : "")
+              // }
+            >
+              {oz}
+            </p>
+            <p className="grade mt-3">{ozGradeLan}</p>
+            <p className="kind">오존</p>
           </div>
-          <div>
-            <Chart />
-            <p>{co}</p>
-            <p>{coGradeLan}</p>
-            <p>일산화탄소</p>
+          <div className="relative">
+            <CoChart />
+            <p className="value">{co}</p>
+            <p className="grade mt-3">{coGradeLan}</p>
+            <p className="kind">일산화탄소</p>
           </div>
-          <div>
-            <Chart />
-            <p>{so}</p>
-            <p>{soGradeLan}</p>
-            <p>아황산가스</p>
+          <div className="relative">
+            <SoChart />
+            <p className="value">{so}</p>
+            <p className="grade mt-3">{soGradeLan}</p>
+            <p className="kind">아황산가스</p>
           </div>
-          <div>
-            <Chart />
-            <p>{no}</p>
-            <p>{noGradeLan}</p>
-            <p>이산화질소</p>
+          <div className="relative">
+            <NoChart />
+            <p className="value">{no}</p>
+            <p className="grade mt-3">{noGradeLan}</p>
+            <p className="kind">이산화질소</p>
           </div>
-          <div>
-            <Chart />
-
-            <p>{khaiGradeLan}</p>
-            <p>통합대기</p>
+          <div className="relative">
+            <KhaiChart />
+            <p className="value">{khai}</p>
+            <p className="grade mt-3">{khaiGradeLan}</p>
+            <p className="kind">통합대기</p>
           </div>
         </div>
       </div>
